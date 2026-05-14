@@ -1,0 +1,23 @@
+steps:
+ 
+  - name: 'maven:3.9.3-eclipse-temurin-17'
+    entrypoint: 'mvn'
+    args: ['test']
+    id: 'run-tests'
+
+  - name: 'maven:3.9.3-eclipse-temurin-17'
+    entrypoint: 'mvn'
+    args: ['package', '-DskipTests']
+    id: 'build-jar'
+
+artifacts:
+  objects:
+    location: 'gs://${PROJECT_ID}_calculator-artifacts'
+    paths:
+      - 'target/*.jar'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+  machineType: 'E2_MEDIUM'
+
+timeout: '600s'
