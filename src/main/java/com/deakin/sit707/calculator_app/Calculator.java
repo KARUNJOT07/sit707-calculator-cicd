@@ -22,9 +22,9 @@ public class Calculator {
     }
     
     public int power(int base, int exponent) {
-        // INTENTIONAL BUG for CI/CD demonstration - will fail tests!
-        return (int) Math.pow(base, exponent - 1);  // Bug: should be exponent, not exponent-1
+        return (int) Math.pow(base, exponent);  // FIXED: removed - 1
     }
+    
     
     public static void main(String[] args) {
         Calculator calc = new Calculator();
