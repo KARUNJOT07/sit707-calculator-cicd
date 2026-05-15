@@ -22,8 +22,7 @@ public class Calculator {
     }
     
     public int power(int base, int exponent) {
-        return (int) Math.pow(base, exponent);  // FIXED: removed - 1
-    }
+        return (int) Math.pow(base, exponent);  
     
     
     public static void main(String[] args) {
